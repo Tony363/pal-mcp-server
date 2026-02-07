@@ -81,26 +81,19 @@ class NebiusModelProvider(RegistryBackedProviderMixin, OpenAICompatibleProvider)
             "zai-org/GLM-4.5",
         ]
 
+        model_selection_order: list[str] = []
         if category == ToolModelCategory.EXTENDED_REASONING:
-            # Prefer reasoning models for advanced tasks
-            for model in reasoning_models:
-                if model in allowed_models:
-                    return model
-            # Fallback to balanced
-            for model in balanced_models:
-                if model in allowed_models:
-                    return model
-
+            # Prefer reasoning models, with balanced as fallback
+            model_selection_order.extend(reasoning_models)
+            model_selection_order.extend(balanced_models)
         elif category == ToolModelCategory.FAST_RESPONSE:
-            # Prefer smaller/faster models
-            for model in fast_models:
-                if model in allowed_models:
-                    return model
-
+            model_selection_order = fast_models
         else:  # BALANCED or default
-            for model in balanced_models:
-                if model in allowed_models:
-                    return model
+            model_selection_order = balanced_models
+
+        for model in model_selection_order:
+            if model in allowed_models:
+                return model
 
         # Ultimate fallback: first available
         return allowed_models[0] if allowed_models else None
