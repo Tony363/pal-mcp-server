@@ -140,7 +140,7 @@
         "nebius-gpt-oss",
         "nebius-gpt-oss-120b"
       ],
-      "intelligence_score": 18,
+      "intelligence_score": 17,
       "description": "GPT-OSS 120B (128K context) - OpenAI's first open-source model with exceptional reasoning",
       "context_window": 128000,
       "max_output_tokens": 16000,
@@ -177,7 +177,7 @@
         "nebius-deepseek-r1",
         "nebius-r1"
       ],
-      "intelligence_score": 18,
+      "intelligence_score": 17,
       "description": "DeepSeek R1 (128K context) - Advanced reasoning model with visible chain-of-thought",
       "context_window": 128000,
       "max_output_tokens": 16000,
@@ -214,7 +214,7 @@
       "aliases": [
         "nebius-deepseek-v3.2"
       ],
-      "intelligence_score": 18,
+      "intelligence_score": 17,
       "description": "DeepSeek V3.2 (128K context) - Latest DeepSeek general-purpose model",
       "context_window": 128000,
       "max_output_tokens": 16000,
@@ -272,7 +272,7 @@
         "nebius-kimi",
         "nebius-kimi-k2"
       ],
-      "intelligence_score": 18,
+      "intelligence_score": 17,
       "description": "Kimi K2 (128K context) - Moonshot AI's flagship model with strong reasoning",
       "context_window": 128000,
       "max_output_tokens": 16000,
